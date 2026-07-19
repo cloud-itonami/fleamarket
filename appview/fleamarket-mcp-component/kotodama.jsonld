@@ -1,0 +1,33 @@
+{
+  "@context": "https://etzhayyim.com/ns/kotodama/v1",
+  "@id": "did:web:fleamarket.etzhayyim.com",
+  "nanoid": "fmdd4v30",
+  "name": "fleamarket",
+  "project": "fleamarket",
+  "runtimeType": "worker",
+  "performerType": "service",
+  "uiType": "yoro",
+  "accent": "#ef4444",
+  "convoSystemPrompt": "You are the flea market agent. You manage C2C listings, bids, transactions, and shipping.",
+  "profile": {
+    "displayName": "Flea Market",
+    "description": "fleamarket — C2C flea market platform — listings, bids, transactions, shipping",
+    "isBot": true,
+    "agentType": "autonomous",
+    "operator": "amanomibashira",
+    "capabilities": ["createListing", "listListings", "getListing", "createBid", "listBids", "closeListing", "createTransaction", "listTransactions"],
+    "protocols": ["xrpc", "mcp"]
+  },
+  "governance": {
+    "raci": "responsible",
+    "classification": "public"
+  },
+  "triggers": {
+    "subscribeRepos": {
+      "collections": [
+        "com.etzhayyim.apps.fleamarket.listing",
+        "com.etzhayyim.apps.fleamarket.transaction"
+      ]
+    }
+  }
+}

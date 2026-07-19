@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:zeebe="http://camunda.org/schema/zeebe/1.0"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+
+  <!-- createListing -->
+  <bpmn:process id="fleamarket-create-listing" name="Fleamarket Create Listing" isExecutable="true">
+    <bpmn:startEvent id="start-create-listing"/>
+    <bpmn:sequenceFlow id="sf-cl-1" sourceRef="start-create-listing" targetRef="task-create-listing"/>
+    <bpmn:serviceTask id="task-create-listing" name="Create Listing">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.createListing"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-cl-2" sourceRef="task-create-listing" targetRef="end-create-listing"/>
+    <bpmn:endEvent id="end-create-listing"/>
+  </bpmn:process>
+
+  <!-- listListings -->
+  <bpmn:process id="fleamarket-list-listings" name="Fleamarket List Listings" isExecutable="true">
+    <bpmn:startEvent id="start-list-listings"/>
+    <bpmn:sequenceFlow id="sf-ll-1" sourceRef="start-list-listings" targetRef="task-list-listings"/>
+    <bpmn:serviceTask id="task-list-listings" name="List Listings">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.listListings"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-ll-2" sourceRef="task-list-listings" targetRef="end-list-listings"/>
+    <bpmn:endEvent id="end-list-listings"/>
+  </bpmn:process>
+
+  <!-- getListing -->
+  <bpmn:process id="fleamarket-get-listing" name="Fleamarket Get Listing" isExecutable="true">
+    <bpmn:startEvent id="start-get-listing"/>
+    <bpmn:sequenceFlow id="sf-gl-1" sourceRef="start-get-listing" targetRef="task-get-listing"/>
+    <bpmn:serviceTask id="task-get-listing" name="Get Listing">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.getListing"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-gl-2" sourceRef="task-get-listing" targetRef="end-get-listing"/>
+    <bpmn:endEvent id="end-get-listing"/>
+  </bpmn:process>
+
+  <!-- createBid -->
+  <bpmn:process id="fleamarket-create-bid" name="Fleamarket Create Bid" isExecutable="true">
+    <bpmn:startEvent id="start-create-bid"/>
+    <bpmn:sequenceFlow id="sf-cb-1" sourceRef="start-create-bid" targetRef="task-create-bid"/>
+    <bpmn:serviceTask id="task-create-bid" name="Create Bid">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.createBid"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-cb-2" sourceRef="task-create-bid" targetRef="end-create-bid"/>
+    <bpmn:endEvent id="end-create-bid"/>
+  </bpmn:process>
+
+  <!-- listBids -->
+  <bpmn:process id="fleamarket-list-bids" name="Fleamarket List Bids" isExecutable="true">
+    <bpmn:startEvent id="start-list-bids"/>
+    <bpmn:sequenceFlow id="sf-lb-1" sourceRef="start-list-bids" targetRef="task-list-bids"/>
+    <bpmn:serviceTask id="task-list-bids" name="List Bids">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.listBids"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-lb-2" sourceRef="task-list-bids" targetRef="end-list-bids"/>
+    <bpmn:endEvent id="end-list-bids"/>
+  </bpmn:process>
+
+  <!-- closeListing -->
+  <bpmn:process id="fleamarket-close-listing" name="Fleamarket Close Listing" isExecutable="true">
+    <bpmn:startEvent id="start-close-listing"/>
+    <bpmn:sequenceFlow id="sf-clo-1" sourceRef="start-close-listing" targetRef="task-close-listing"/>
+    <bpmn:serviceTask id="task-close-listing" name="Close Listing">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.closeListing"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-clo-2" sourceRef="task-close-listing" targetRef="end-close-listing"/>
+    <bpmn:endEvent id="end-close-listing"/>
+  </bpmn:process>
+
+  <!-- createTransaction -->
+  <bpmn:process id="fleamarket-create-transaction" name="Fleamarket Create Transaction" isExecutable="true">
+    <bpmn:startEvent id="start-create-transaction"/>
+    <bpmn:sequenceFlow id="sf-ct-1" sourceRef="start-create-transaction" targetRef="task-create-transaction"/>
+    <bpmn:serviceTask id="task-create-transaction" name="Create Transaction">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.createTransaction"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-ct-2" sourceRef="task-create-transaction" targetRef="end-create-transaction"/>
+    <bpmn:endEvent id="end-create-transaction"/>
+  </bpmn:process>
+
+  <!-- listTransactions -->
+  <bpmn:process id="fleamarket-list-transactions" name="Fleamarket List Transactions" isExecutable="true">
+    <bpmn:startEvent id="start-list-transactions"/>
+    <bpmn:sequenceFlow id="sf-lt-1" sourceRef="start-list-transactions" targetRef="task-list-transactions"/>
+    <bpmn:serviceTask id="task-list-transactions" name="List Transactions">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="com.etzhayyim.apps.fleamarket.listTransactions"/>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="sf-lt-2" sourceRef="task-list-transactions" targetRef="end-list-transactions"/>
+    <bpmn:endEvent id="end-list-transactions"/>
+  </bpmn:process>
+
+</bpmn:definitions>

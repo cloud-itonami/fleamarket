@@ -1,0 +1,43 @@
+{
+  "name": "kotodama-fmdd4v30",
+  "main": "svelte/.svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2025-03-17",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_als"
+  ],
+  "vars": {
+    "APP_CAPABILITIES": "[\"createListing\",\"listListings\",\"getListing\",\"createBid\",\"listBids\",\"closeListing\",\"createTransaction\",\"listTransactions\"]",
+    "APP_DESCRIPTION": "fleamarket — C2C flea market platform — listings, bids, transactions, shipping",
+    "APP_DISPLAY_NAME": "Flea Market",
+    "APP_FRAMEWORK": "sveltekit-edge-bff",
+    "APP_NANOID": "fmdd4v30",
+    "APP_PERFORMER_TYPE": "service",
+    "APP_UI_TYPE": "yoro",
+    "AGENTGATEWAY_MCP_ROUTER_URL": "https://mcp.etzhayyim.com/xrpc/com.etzhayyim.mcp.message"
+  },
+  "rules": [
+    {
+      "type": "CompiledWasm",
+      "globs": [
+        "**/*.wasm"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "fmdd4v30.etzhayyim.com/*",
+      "zone_name": "etzhayyim.com"
+    },
+    {
+      "pattern": "fleamarket.etzhayyim.com/*",
+      "zone_name": "etzhayyim.com"
+    }
+  ],
+  "assets": {
+    "directory": "./svelte/.svelte-kit/cloudflare/client",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
