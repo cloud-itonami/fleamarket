@@ -1,0 +1,12 @@
+;; shadow-cljs build for the fleamarket appview UI.
+;; Mirrors orgs/cloud-itonami/app-itonami/shadow-cljs.edn:
+;; CLJS + reagent on kotoba-ui.core + appkit.core (murakumo-studio構成).
+{:deps {:aliases [:cljs]}
+ :nrepl {:port 9632}
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "appview/fleamarket-mcp-component/web/dist/js"
+   :asset-path "js"
+   :modules {:main {:init-fn cloud-itonami.app-fleamarket.desktop/init!}}}}}
